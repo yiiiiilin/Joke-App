@@ -2,7 +2,9 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(express.static(__dirname + '/../client/dist'));
+
+app.get('/hello', (req, res) => {
   res.send('hello~')
 })
 
